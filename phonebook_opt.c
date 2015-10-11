@@ -1,13 +1,15 @@
 #include <stdlib.h>
-
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 #include "phonebook_opt.h"
 
 /* FILL YOUR OWN IMPLEMENTATION HERE! */
-LastName *findName(char lastname[], LastName *pHead)
+entry *findName(char lastName[], entry *pHead)
 {
     /* TODO: implement */
     while(pHead != NULL){
-	if(strcasecmp(lastname, phead->lastname) == 0){
+	if(strcasecmp(lastName, phead->lastName) == 0){
 	    return pHead;
 	}
 	pHead = pHead->pNext;
@@ -15,11 +17,11 @@ LastName *findName(char lastname[], LastName *pHead)
     return NULL;
 }
 
-LastName *append(char lastName[], LastName *e)
+entry *append(char lastName[], entry *e)
 {
-    e->pNext = (LastName *)malloc(sizeof(LastName));
+    e->pNext = (entry *)malloc(sizeof(entry));
     e = e->pNext;
-    strcpy(e->lastname, lastName);
+    strcpy(e->lastName, lastName);
     e->pNext = NULL;
     return e;
 }
