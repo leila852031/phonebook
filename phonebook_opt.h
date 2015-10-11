@@ -5,9 +5,9 @@
 /* optimizationversion */
 typedef struct __PHONE_BOOK_LASTNAME {
     char lastName[MAX_LAST_NAME_SIZE];
-    struct __PHONE_BOOK_LASTNAME *pNEXT;
-    struct __PHONE_BOOK_ENTRY *pENTRY;
-} lastname;
+    struct __PHONE_BOOK_LASTNAME *pNext;
+    struct __PHONE_BOOK_ENTRY *pEntry;
+} LastName;
 typedef struct __PHONE_BOOK_ENTRY {
     char firstName[16];
     char email[16];
@@ -36,7 +36,7 @@ typedef struct __PHONE_BOOK_ENTRY {
     struct __PHONE_BOOK_ENTRY *pNext;
 } entry;
 */
-entry *findName(char lastname[], lastname *pHead);
-entry *append(char lastName[], lastname *e);
+entry *findName(char lastname[], LastName *pHead);
+entry *append(char lastName[], LastName *e);
 
 #endif
